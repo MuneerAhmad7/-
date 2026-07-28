@@ -1,0 +1,182 @@
+{
+  "institution": {
+    "name_en": "Madrassa Darul Falah Chota Lahor Swabi",
+    "name_ur": "مدرسہ دارالفلاح چھوٹا لاہور صوابی",
+    "tagline_en": "Center of Sacred Islamic Knowledge & Modern Education",
+    "tagline_ur": "مرکز علوم اسلامیہ و جدید عصری تعلیم",
+    "location_en": "Chota Lahor, District Swabi, Khyber Pakhtunkhwa, Pakistan",
+    "location_ur": "چھوٹا لاہور، ضلع صوابی، خیبر پختونخوا، پاکستان",
+    "phone": "+92 938 400123",
+    "whatsapp": "+92 300 1234567",
+    "email": "info@darulfalahswabi.edu.pk",
+    "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.289!2d72.356857!3d34.0566968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dee7004a108e57%3A0x44c561f0999d5ae6!2z2YXYr9ix2LPZhyDYr9in2LHYp9mE2YHZhNin2K0g2obZiNaz2Kcg2YTYp9mH2YjYsg!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"
+  },
+  "stats": [
+    {
+      "key": "students",
+      "count": 1250,
+      "label_en": "Enrolled Students",
+      "label_ur": "زیر تعلیم طلباء",
+      "icon": "fa-user-graduate"
+    },
+    {
+      "key": "haffaz",
+      "count": 3400,
+      "label_en": "Haffaz Graduated",
+      "label_ur": "فارغ التحصیل حفاظ",
+      "icon": "fa-quran"
+    },
+    {
+      "key": "faculty",
+      "count": 65,
+      "label_en": "Expert Faculty",
+      "label_ur": "ممتاز اساتذہ کرام",
+      "icon": "fa-chalkboard-teacher"
+    },
+    {
+      "key": "meals",
+      "count": 3750,
+      "label_en": "Free Daily Meals",
+      "label_ur": "روزانہ مفت کھانا",
+      "icon": "fa-utensils"
+    }
+  ],
+  "notices": [
+    {
+      "id": 1,
+      "date": "2026-07-25",
+      "title_en": "Admissions Open for Hifz-ul-Quran & Formal Schooling 2026-27 session.",
+      "title_ur": "سال تعلیمی 2026-27 کے لیے حفظ القرآن اور عصری پرائمری/مڈل اسکولنگ کے داخلے جاری ہیں۔"
+    },
+    {
+      "id": 2,
+      "date": "2026-07-20",
+      "title_en": "Annual Dastar-e-Fazeelat Ceremony scheduled for next month. Parents & elders invited.",
+      "title_ur": "سالانہ دستارِ فضیلت کانفرنس اگلے ماہ منعقد ہوگی۔ تمام حضرات کو شرکت کی دعوت ہے۔"
+    },
+    {
+      "id": 3,
+      "date": "2026-07-15",
+      "title_en": "100% Free Hostel Lodging & 3-Time Meals ensured for all full-time boarders.",
+      "title_ur": "تمام مقیمی طلباء کے لیے 100% مفت رہائش اور تین وقت کے غذائیت بخش طعام کی فراہمی۔"
+    },
+    {
+      "id": 4,
+      "date": "2026-07-10",
+      "title_en": "New Computer Lab and Science Section inaugurated for Dars-e-Nizami & Schooling students.",
+      "title_ur": "درسِ نظامی و اسکول کے طلباء کے لیے جدید کمپیوٹر لیب اور سائنس لیبارٹری کا افتتاح۔"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "category": "scholars",
+      "author_en": "Maulana Mufti Muhammad Saeed",
+      "author_ur": "مولانا مفتی محمد سعید صاحب",
+      "role_en": "Senior Islamic Jurist & Visiting Scholar",
+      "role_ur": "سینئر فقہی و استادِ حدیث",
+      "text_en": "Madrassa Darul Falah Chota Lahor is a beacon of authentic Islamic guidance and academic perfection in KPK. Their integration of Dars-e-Nizami with science and English is exemplary.",
+      "text_ur": "مدرسہ دارالفلاح چھوٹا لاہور صوابی میں دینی و عصری علوم کا امتزاج دیکھ کر دل بے حد خوش ہوتا ہے۔ یہ ادارہ خیبر پختونخوا کا ایک عظیم علمی و روحانی مرکز ہے۔",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "category": "scholars",
+      "author_en": "Sheikh-ul-Hadith Maulana Abdul Rahman",
+      "author_ur": "شیخ الحدیث مولانا عبد الرحمن صاحب",
+      "role_en": "Principal, Wafaq-ul-Madaris Council",
+      "role_ur": "رکن وفاق المدارس العربیہ",
+      "text_en": "The discipline of Tajweed and the dedication of teachers at Darul Falah are unmatched. May Allah bless this noble seminary.",
+      "text_ur": "دارالفلاح میں تجوید و حفظ کا معیار اور اساتذہ کی مخلصانہ محنت قابلِ تحسین ہے۔ اللہ تعالٰی اس ادارے کو دن دگنی رات چوگنی ترقی عطا فرمائے۔",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "category": "scholars",
+      "author_en": "Mufti Qari Ihsanullah Swabi",
+      "author_ur": "مفتی قاری احسان اللہ صوابی",
+      "role_en": "Head of Darul Ifta Swabi",
+      "role_ur": "رئیس دارالافتاء صوابی",
+      "text_en": "The research environment in Takhassus Fil-Fiqh at Darul Falah prepares students to solve modern complex jurisprudential questions with wisdom.",
+      "text_ur": "تخصص فی الفقہ کے طلباء کی علمی تربیت اور فقہی بصیرت دیکھ کر اطمینان ہوتا ہے۔ دارالافتاء دارالفلاح ایک فعال ادارہ ہے۔",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "category": "elders",
+      "author_en": "Haji Gul Zada Khan",
+      "author_ur": "حاجی گل زادہ خان",
+      "role_en": "Chief Elder & Community Chairman, Chota Lahor",
+      "role_ur": "مشرقِ علاقہ و چئیرمین ویلج کونسل، چھوٹا لاہور",
+      "text_en": "For decades, Madrassa Darul Falah has provided 100% free quality education, boarding, and meals to hundreds of needy orphans and local children.",
+      "text_ur": "چھوٹا لاہور کے لوگوں کے لیے یہ ادارہ ایک نعمت ہے۔ یتیم اور مستحق بچوں کے لیے مفت تعلیم و طعام کی فراہمی میں اس کی خدمات بے مثال ہیں۔",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "category": "elders",
+      "author_en": "Malik Zafar Iqbal Advocate",
+      "author_ur": "ملک ظفر اقبال ایڈووکیٹ",
+      "role_en": "Senior Advocate High Court, Swabi",
+      "role_ur": "سینئر ایڈووکیٹ ہائی کورٹ، صوابی",
+      "text_en": "The security and 24/7 CCTV surveillance at Madrassa Darul Falah give every parent in Swabi complete peace of mind regarding their children's safety.",
+      "text_ur": "حفاظتی انتظامات اور سی سی ٹی وی کیمروں کی 24 گھنٹے نگرانی کی وجہ سے والدین اپنے بچوں کے معاملے میں بالکل مطمئن رہتے ہیں۔",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "category": "parents",
+      "author_en": "Muhammad Tariq Swati",
+      "author_ur": "محمد طارق سواتی",
+      "role_en": "Father of Hafiz Muhammad Bilal",
+      "role_ur": "والد حافظ محمد بلال (طالب علم)",
+      "text_en": "My son completed Hifz in just 2 years with flawless Tajweed, while simultaneously securing top marks in his 8th Grade Board exams!",
+      "text_ur": "میرے بیٹے نے محض 2 سال میں تجوید کے ساتھ حفظ مکمل کیا اور ساتھ ہی اسکولنگ میں بھی نمایاں نمبر حاصل کیے۔ میں انتظامیہ کا تہہ دل سے ممنون ہوں۔",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "category": "parents",
+      "author_en": "Engineer Shahabuddin Khan",
+      "author_ur": "انجینیئر شہاب الدین خان",
+      "role_en": "Parent of Dars-e-Nizami Student",
+      "role_ur": "والد طالب علم درسِ نظامی",
+      "text_en": "Clean dining halls, nutritious food, daily medical checkups, and strict character building. I couldn't have asked for a better institute for my son.",
+      "text_ur": "صاف ستھرا ہاسٹل، 3 وقت کا معیاری کھانا اور اساتذہ کی شفقت۔ دارالفلاح نے میرے بیٹے کی بہترین تربیت کی ہے۔",
+      "rating": 5
+    },
+    {
+      "id": 8,
+      "category": "scholars",
+      "author_en": "Maulana Qari Tariq Mahmood",
+      "author_ur": "مولانا قاری طارق محمود صاحب",
+      "role_en": "Master Qari of Qira'at Ashara",
+      "role_ur": "استاد قراءت عشرہ",
+      "text_en": "The Quran recitation standards maintained here comply with the highest classical tradition of Tajweed. Exemplary administration.",
+      "text_ur": "تجوید و قراءت کے قواعد کی پابندی اور طلباء کا خوش الحانی سے قرآن پڑھنا دارالفلاح کی خاص پہچان ہے۔",
+      "rating": 5
+    },
+    {
+      "id": 9,
+      "category": "elders",
+      "author_en": "Dr. Fazal-e-Rabbani",
+      "author_ur": "ڈاکٹر فضلِ ربانی",
+      "role_en": "Prominent Physician & Social Worker, Swabi",
+      "role_ur": "معروف معالج و سماجی شخصیت، صوابی",
+      "text_en": "I regularly visit the campus for free medical checkups. The cleanliness and hygiene maintained in the hostel dining hall is remarkable.",
+      "text_ur": "ادارے میں صفائی ستھرائی اور صحت عامہ کے اصولوں کی پاسداری دیکھ کر انتہائی خوشی ہوتی ہے۔ ہاسٹل کا ماحول بہترین ہے۔",
+      "rating": 5
+    },
+    {
+      "id": 10,
+      "category": "parents",
+      "author_en": "Khurshid Ahmad Khan",
+      "author_ur": "خورشید احمد خان",
+      "role_en": "Guardian of 2 Students",
+      "role_ur": "سرپرست طلباء",
+      "text_en": "Free books, free clothing for needy students, and no hidden tuition charges. Truly a non-profit welfare institution dedicated to Allah's cause.",
+      "text_ur": "یہاں بلا معاوضہ اعلیٰ تعلیم اور رہائش ملتی ہے۔ غریب و نادار طلباء کی کفالت کرنا اس مدرسے کا طرہ امتیاز ہے۔",
+      "rating": 5
+    }
+  ]
+}
