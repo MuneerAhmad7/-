@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Exam Results Portal | Madrassa Darul Falah Swabi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contact">
+        <a href="tel:+92938400123"><i class="fa-solid fa-phone"></i> +92 938 400123</a>
+        <a href="mailto:info@darulfalahswabi.edu.pk"><i class="fa-solid fa-envelope"></i> info@darulfalahswabi.edu.pk</a>
+      </div>
+      <div class="top-actions">
+        <a href="student-portal.html" class="top-portal-link">
+          <i class="fa-solid fa-id-card"></i> <span class="lang-en">Student Portal</span><span class="lang-ur">طالب علم پورٹل</span>
+        </a>
+        <a href="results.html" class="top-portal-link">
+          <i class="fa-solid fa-square-poll-vertical"></i> <span class="lang-en">Results</span><span class="lang-ur">امتحانی نتائج</span>
+        </a>
+        <a href="admin-portal.html" class="top-portal-link">
+          <i class="fa-solid fa-lock"></i> <span class="lang-en">Admin Portal</span><span class="lang-ur">ایڈمن پورٹل</span>
+        </a>
+
+        <button id="langToggleBtn" class="lang-toggle-btn">
+          <i class="fa-solid fa-globe"></i>
+          <span class="btn-lang-text-en">اردو (RTL)</span>
+          <span class="btn-lang-text-ur" style="display: none;">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main Navigation -->
+  <header class="header-main">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo-link">
+        <img src="../images/logo.png" alt="Madrassa Crest Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <span class="brand-name lang-en">Madrassa Darul Falah</span>
+          <span class="brand-name lang-ur">مدرسہ دارالفلاح چھوٹا لاہور صوابی</span>
+          <span class="brand-subtitle lang-en">Chota Lahor, District Swabi KPK</span>
+          <span class="brand-subtitle lang-ur">ضلع صوابی، خیبر پختونخوا</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li class="nav-item"><a href="../index.html" class="nav-link"><span class="lang-en">Home</span><span class="lang-ur">صفحہ اول</span></a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><span class="lang-en">About Us</span><span class="lang-ur">تعارف</span></a></li>
+          <li class="nav-item"><a href="academics.html" class="nav-link"><span class="lang-en">Academics</span><span class="lang-ur">تعلیمی شعبہ جات</span></a></li>
+          <li class="nav-item"><a href="facilities.html" class="nav-link"><span class="lang-en">Facilities</span><span class="lang-ur">سہولیات و رہائش</span></a></li>
+          <li class="nav-item"><a href="reviews.html" class="nav-link"><span class="lang-en">Reviews</span><span class="lang-ur">آراء و تاثرات</span></a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="lang-en">Gallery</span><span class="lang-ur">تصاویری جھلکیاں</span></a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><span class="lang-en">Contact</span><span class="lang-ur">رابطہ کریں</span></a></li>
+          <li class="nav-item"><a href="admissions.html" class="btn-cta-nav"><span class="lang-en">Admissions</span><span class="lang-ur">آن لائن داخلہ</span></a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Section Header -->
+  <section class="section-padding bg-dark" style="border-bottom: 3px solid var(--gold);">
+    <div class="container text-center" style="text-align: center;">
+      <h1 class="lang-en" style="font-size: 2.8rem; color: var(--gold); font-family: var(--font-en-serif);">Online Student Exam Results Portal</h1>
+      <h1 class="lang-ur" style="font-size: 2.5rem; color: var(--gold); font-family: var(--font-ur);">آن لائن امتحانی نتائج و رزلٹ کارڈ پورٹل</h1>
+      <p class="lang-en" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">Search Exam Results by Roll Number, Student Name, or Father Name to view official Marksheets.</p>
+      <p class="lang-ur" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">رول نمبر، طالب علم کا نام یا والد کے نام سے امتحانی رزلٹ تلاش کریں اور آفیشل مارک شیٹ ڈاؤن لوڈ کریں</p>
+    </div>
+  </section>
+
+  <!-- Search Card Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="results-search-card">
+        <h2 class="section-title lang-en" style="text-align: center;"><i class="fa-solid fa-magnifying-glass"></i> Search Exam Results</h2>
+        <h2 class="section-title lang-ur" style="text-align: center;"><i class="fa-solid fa-magnifying-glass"></i> امتحانی نتیجہ تلاش کیجیے</h2>
+
+        <form id="resultsSearchForm">
+          <div class="search-input-group">
+            <input type="text" id="searchQuery" class="search-input-field" placeholder="Enter Roll No (e.g. MDF-2026-1001) or Student Name / رول نمبر یا نام درج کریں..." required>
+            <button type="submit" class="btn btn-primary" style="padding: 0.85rem 1.8rem;">
+              <span class="lang-en"><i class="fa-solid fa-search"></i> Search</span>
+              <span class="lang-ur"><i class="fa-solid fa-search"></i> تلاش کریں</span>
+            </button>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem; text-align: center;">
+            <span class="lang-en">Sample Test Roll Numbers: <strong>MDF-2026-1001</strong> or <strong>MDF-2026-1002</strong></span>
+            <span class="lang-ur">آزمائشی رول نمبر: <strong>MDF-2026-1001</strong> یا <strong>MDF-2026-1002</strong></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Result Display Area (Renders Official Printable Marksheet Card) -->
+      <div id="marksheetResultDisplay"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center" style="text-align: center;">
+      <p class="lang-en">&copy; 2026 Madrassa Darul Falah Chota Lahor Swabi. All Rights Reserved.</p>
+      <p class="lang-ur">&copy; 2026 جملہ حقوق مدرسہ دارالفلاح چھوٹا لاہور صوابی کے پاس محفوظ ہیں۔</p>
+    </div>
+  </footer>
+
+  <script src="../style/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login Portal | Madrassa Darul Falah Swabi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style/style.css">
+  <script>
+    // If already logged in, redirect immediately to Master Admin Dashboard
+    if (localStorage.getItem('madrassa_admin_auth') === 'true') {
+      window.location.href = 'admin-dashboard.html';
+    }
+  </script>
+</head>
+<body style="background: #0f172a; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contact">
+        <a href="tel:+92938400123"><i class="fa-solid fa-phone"></i> +92 938 400123</a>
+        <a href="mailto:info@darulfalahswabi.edu.pk"><i class="fa-solid fa-envelope"></i> info@darulfalahswabi.edu.pk</a>
+      </div>
+      <div class="top-actions">
+        <a href="../index.html" class="top-portal-link">
+          <i class="fa-solid fa-house"></i> <span class="lang-en">Public Website</span><span class="lang-ur">اصلی ویب سائٹ</span>
+        </a>
+        <button id="langToggleBtn" class="lang-toggle-btn">
+          <i class="fa-solid fa-globe"></i>
+          <span class="btn-lang-text-en">اردو (RTL)</span>
+          <span class="btn-lang-text-ur" style="display: none;">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main Navigation -->
+  <header class="header-main">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo-link">
+        <img src="../images/logo.png" alt="Madrassa Crest Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <span class="brand-name lang-en">Madrassa Darul Falah</span>
+          <span class="brand-name lang-ur">مدرسہ دارالفلاح چھوٹا لاہور صوابی</span>
+          <span class="brand-subtitle lang-en">Chota Lahor, District Swabi KPK</span>
+          <span class="brand-subtitle lang-ur">ضلع صوابی، خیبر پختونخوا</span>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <!-- Login Main Content -->
+  <section style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 3rem 1rem;">
+    <div class="container" style="max-width: 480px; width: 100%;">
+
+      <div class="admin-login-card" style="background: #1e293b; border: 2px solid var(--gold); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.6); text-align: center; color: #f8fafc;">
+        <div style="font-size: 3.5rem; color: var(--gold); margin-bottom: 1rem;"><i class="fa-solid fa-user-shield"></i></div>
+        <h2 class="section-title lang-en" style="color: var(--gold); margin-bottom: 0.5rem;">Admin Control Portal</h2>
+        <h2 class="section-title lang-ur" style="color: var(--gold); margin-bottom: 0.5rem;">مرکزی ایڈمن لاگ ان گیٹ وے</h2>
+        <p class="lang-en" style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.9rem;">Please enter administrator credentials to access the Master Control Dashboard.</p>
+        <p class="lang-ur" style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.9rem;">مرکزی ڈیش بورڈ میں داخلے کے لیے ایڈمن اکاؤنٹ سے لاگ ان کریں</p>
+
+        <form id="adminPageLoginForm" onsubmit="executeAdminLoginPortal(event); return false;">
+          <div style="margin-bottom: 1.2rem; text-align: left;">
+            <label class="lang-en" style="font-weight: 600; font-size: 0.9rem; color: #cbd5e1;">Username</label>
+            <label class="lang-ur" style="font-weight: 600; font-size: 0.9rem; color: #cbd5e1; text-align: right; display: block;">یوزر نیم</label>
+            <input type="text" id="adminUserField" placeholder="admin" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm); font-size: 1rem;">
+          </div>
+
+          <div style="margin-bottom: 1.5rem; text-align: left;">
+            <label class="lang-en" style="font-weight: 600; font-size: 0.9rem; color: #cbd5e1;">Password</label>
+            <label class="lang-ur" style="font-weight: 600; font-size: 0.9rem; color: #cbd5e1; text-align: right; display: block;">پاس ورڈ</label>
+            <input type="password" id="adminPassField" placeholder="••••••••" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm); font-size: 1rem;">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1.1rem; background: var(--gold); color: #0f172a; border-color: var(--gold); font-weight: 700;">
+            <span class="lang-en"><i class="fa-solid fa-right-to-bracket"></i> Login as Admin</span>
+            <span class="lang-ur"><i class="fa-solid fa-right-to-bracket"></i> ایڈمن لاگ ان کریں</span>
+          </button>
+        </form>
+
+        <div id="adminLoginErrorDisplay" style="margin-top: 1.2rem;"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: #090d16; color: #64748b; padding: 1.2rem 0; text-align: center; border-top: 1px solid #1e293b;">
+    <div class="container text-center">
+      <p class="lang-en">&copy; 2026 Madrassa Darul Falah Chota Lahor Swabi. All Rights Reserved.</p>
+      <p class="lang-ur">&copy; 2026 جملہ حقوق مدرسہ دارالفلاح چھوٹا لاہور صوابی کے پاس محفوظ ہیں۔</p>
+    </div>
+  </footer>
+
+  <script src="../style/script.js"></script>
+  <script>
+    function executeAdminLoginPortal(e) {
+      e.preventDefault();
+      const userVal = document.getElementById('adminUserField').value.trim();
+      const passVal = document.getElementById('adminPassField').value.trim();
+      const errorBox = document.getElementById('adminLoginErrorDisplay');
+      const isUr = document.documentElement.getAttribute('lang') === 'ur';
+
+      errorBox.style.display = 'none';
+
+      if (userVal.toLowerCase() === 'admin' && passVal === 'darulfalah2026') {
+        localStorage.setItem('madrassa_admin_auth', 'true');
+        alert(isUr ? 'مبارک ہو! ایڈمن لاگ ان کامیاب ہو گیا۔' : '✓ Success! Admin Login successful. Redirecting...');
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        let reason = '';
+        if (userVal.toLowerCase() !== 'admin') {
+          reason = isUr 
+            ? `❌ لاگ ان ناکام: درج کردہ یوزر نیم ('${userVal}') غلط ہے۔ درست یوزر نیم 'admin' ہے۔`
+            : `❌ Login Failed: Incorrect Username ('${userVal}'). Correct username is 'admin'.`;
+        } else {
+          reason = isUr 
+            ? `❌ لاگ ان ناکام: پاس ورڈ غلط ہے! درج کردہ پاس ورڈ: '${passVal}'۔ درست پاس ورڈ 'darulfalah2026' ہے۔`
+            : `❌ Login Failed: Incorrect Password ('${passVal}'). Correct password is 'darulfalah2026'.`;
+        }
+        errorBox.innerHTML = `<div style="background: #450a0a; border: 2px solid #ef4444; color: #fca5a5; padding: 0.9rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700;">${reason}</div>`;
+        errorBox.style.display = 'block';
+        alert(reason);
+      }
+    }
+  </script>
+</body>
+</html>

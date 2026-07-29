@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Photo Upload & Section Manager | Madrassa Darul Falah Swabi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contact">
+        <a href="tel:+92938400123"><i class="fa-solid fa-phone"></i> +92 938 400123</a>
+        <a href="mailto:info@darulfalahswabi.edu.pk"><i class="fa-solid fa-envelope"></i> info@darulfalahswabi.edu.pk</a>
+      </div>
+      <div class="top-actions">
+        <a href="admin-portal.html" class="top-portal-link">
+          <i class="fa-solid fa-lock"></i> <span class="lang-en">Admin Hub</span><span class="lang-ur">ایڈمن پورٹل</span>
+        </a>
+        <button id="langToggleBtn" class="lang-toggle-btn">
+          <i class="fa-solid fa-globe"></i>
+          <span class="btn-lang-text-en">اردو (RTL)</span>
+          <span class="btn-lang-text-ur" style="display: none;">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main Navigation -->
+  <header class="header-main">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo-link">
+        <img src="../images/logo.png" alt="Madrassa Crest Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <span class="brand-name lang-en">Madrassa Darul Falah</span>
+          <span class="brand-name lang-ur">مدرسہ دارالفلاح چھوٹا لاہور صوابی</span>
+          <span class="brand-subtitle lang-en">Chota Lahor, District Swabi KPK</span>
+          <span class="brand-subtitle lang-ur">ضلع صوابی، خیبر پختونخوا</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li class="nav-item"><a href="../index.html" class="nav-link"><span class="lang-en">Home</span><span class="lang-ur">صفحہ اول</span></a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><span class="lang-en">About Us</span><span class="lang-ur">تعارف</span></a></li>
+          <li class="nav-item"><a href="academics.html" class="nav-link"><span class="lang-en">Academics</span><span class="lang-ur">تعلیمی شعبہ جات</span></a></li>
+          <li class="nav-item"><a href="facilities.html" class="nav-link"><span class="lang-en">Facilities</span><span class="lang-ur">سہولیات و رہائش</span></a></li>
+          <li class="nav-item"><a href="reviews.html" class="nav-link"><span class="lang-en">Reviews</span><span class="lang-ur">آراء و تاثرات</span></a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="lang-en">Gallery</span><span class="lang-ur">تصاویری جھلکیاں</span></a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><span class="lang-en">Contact</span><span class="lang-ur">رابطہ کریں</span></a></li>
+          <li class="nav-item"><a href="admissions.html" class="btn-cta-nav"><span class="lang-en">Admissions</span><span class="lang-ur">آن لائن داخلہ</span></a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Section Header -->
+  <section class="section-padding bg-dark" style="border-bottom: 3px solid var(--gold);">
+    <div class="container text-center" style="text-align: center;">
+      <h1 class="lang-en" style="font-size: 2.8rem; color: var(--gold); font-family: var(--font-en-serif);">Admin Photo Upload & Section Manager</h1>
+      <h1 class="lang-ur" style="font-size: 2.5rem; color: var(--gold); font-family: var(--font-ur);">تصاویر اپ لوڈ، گیلری و شعبہ جات مینیجر</h1>
+      <p class="lang-en" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">Upload photos to any website section, manage live image assets, or remove old images.</p>
+      <p class="lang-ur" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">ویب سائٹ کے کسی بھی شعبہ میں نایاب تصاویر اپ لوڈ کریں، نئی خبریں شائع کریں یا پرانی تصاویر حذف کریں۔</p>
+    </div>
+  </section>
+
+  <!-- Section Content -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Case A: Locked Authentication Card -->
+      <div id="adminLockCardSection" class="admin-login-card">
+        <div style="font-size: 3.5rem; color: var(--gold); margin-bottom: 1rem;"><i class="fa-solid fa-user-shield"></i></div>
+        <h2 class="section-title lang-en">Admin Authentication Required</h2>
+        <h2 class="section-title lang-ur">ایڈمن لاگ ان درکار ہے</h2>
+        <p class="lang-en" style="color: var(--text-muted); margin-bottom: 1.5rem;">Please enter administrator credentials to upload or delete photos.</p>
+        <p class="lang-ur" style="color: var(--text-muted); margin-bottom: 1.5rem;">تصاویر اپ لوڈ یا حذف کرنے کے لیے اپنے ایڈمن اکاؤنٹ سے لاگ ان کریں</p>
+
+        <form id="adminPageLoginForm" onsubmit="handleAdminLoginDirect(event, this); return false;">
+          <div style="margin-bottom: 1rem; text-align: left;">
+            <label class="lang-en" style="font-weight: 600; font-size: 0.9rem;">Username</label>
+            <label class="lang-ur" style="font-weight: 600; font-size: 0.9rem; text-align: right; display: block;">یوزر نیم</label>
+            <input type="text" class="admin-user-input" placeholder="admin" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+          </div>
+
+          <div style="margin-bottom: 1.5rem; text-align: left;">
+            <label class="lang-en" style="font-weight: 600; font-size: 0.9rem;">Password</label>
+            <label class="lang-ur" style="font-weight: 600; font-size: 0.9rem; text-align: right; display: block;">پاس ورڈ</label>
+            <input type="password" class="admin-pass-input" placeholder="••••••••" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span class="lang-en"><i class="fa-solid fa-right-to-bracket"></i> Login as Admin</span>
+            <span class="lang-ur"><i class="fa-solid fa-right-to-bracket"></i> ایڈمن لاگ ان کریں</span>
+          </button>
+        </form>
+
+        <div id="adminLoginErrorDisplay"></div>
+      </div>
+
+      <!-- Case B: Authenticated Admin Upload Form -->
+      <div id="adminUploadCardSection" class="admin-upload-card" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
+          <div class="admin-badge-status">
+            <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+            <span class="lang-en">Logged in as Administrator</span>
+            <span class="lang-ur">لاگ ان: ایڈمنسٹریٹر</span>
+          </div>
+
+          <div>
+            <a href="admin-portal.html" class="btn btn-outline-primary" style="padding: 0.35rem 0.8rem; font-size: 0.85rem; margin-right: 0.5rem;">
+              <span class="lang-en">Admin Hub</span><span class="lang-ur">مرکزی ڈیش بورڈ</span>
+            </a>
+            <button class="btn btn-outline-primary adminLogoutBtn" style="padding: 0.35rem 0.8rem; font-size: 0.85rem; border-color: #ef4444; color: #ef4444;">
+              <span class="lang-en"><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
+              <span class="lang-ur"><i class="fa-solid fa-right-from-bracket"></i> لاگ آؤٹ</span>
+            </button>
+          </div>
+        </div>
+
+        <h2 class="section-title lang-en" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-camera-retro"></i> Upload Photo to Website Section</h2>
+        <h2 class="section-title lang-ur" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-camera-retro"></i> ویب سائٹ سیکشن میں نئی تصویر اپ لوڈ کریں</h2>
+
+        <form id="adminPhotoUploadForm" onsubmit="submitAdminPhotoUpload(event); return false;">
+          
+          <!-- Drag & Drop Upload Zone -->
+          <div class="dropzone-box" id="imageDropzone" style="cursor: pointer;">
+            <i class="fa-solid fa-cloud-arrow-up dropzone-icon"></i>
+            <h4 class="lang-en" style="margin-bottom: 0.3rem;">Drag & Drop Image Here or Click to Browse</h4>
+            <h4 class="lang-ur" style="margin-bottom: 0.3rem;">تصویر یہاں ڈریگ کریں یا کلک کر کے فائل منتخب کریں</h4>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Supports: JPG, PNG, WEBP, GIF (Max 10MB)</span>
+            
+            <div style="margin-top: 0.8rem;">
+              <button type="button" onclick="document.getElementById('photoFileInput').click()" class="btn btn-outline-primary" style="padding: 0.35rem 1rem; font-size: 0.85rem;">
+                <i class="fa-solid fa-folder-open"></i> <span class="lang-en">Browse Image File</span><span class="lang-ur">تصویر منتخب کریں</span>
+              </button>
+            </div>
+
+            <input type="file" id="photoFileInput" accept="image/*" style="display: none;">
+            <img id="imagePreviewImg" style="display: none; max-height: 200px; margin: 1rem auto; border-radius: var(--radius-sm); border: 2px solid var(--gold);">
+          </div>
+
+          <!-- Target Website Section Dropdown -->
+          <div style="margin-bottom: 1.2rem;">
+            <label class="lang-en" style="font-weight: 600;">Target Website Section *</label>
+            <label class="lang-ur" style="font-weight: 600;">تصویر کے لیے ویب سائٹ کا منتخب کردہ شعبہ / سیکشن *</label>
+            <select id="targetSection" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <option value="gallery">Campus Photo Gallery (تصویری گیلری)</option>
+              <option value="hero">Hero Main Banner Background (ہیرو مین بینر بیک گراؤنڈ)</option>
+              <option value="hifz">Hifz-ul-Quran Department (تحفیظ القرآن والتجوید)</option>
+              <option value="schooling">Integrated Formal Schooling (عصری اسکولنگ)</option>
+              <option value="dars-e-nizami">Dars-e-Nizami Alim Degree (درسِ نظامی)</option>
+              <option value="darul-ifta">Darul Ifta & Takhassus (دارالافتاء)</option>
+              <option value="facilities">Boarding & Dining Facilities (اقامت و طعام)</option>
+              <option value="cctv">CCTV & Security Monitoring (سیکیورٹی مانیٹرنگ)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Photo Title (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600;">تصویر کا عنوان (اردو) *</label>
+              <input type="text" id="photoTitleUr" placeholder="مثال: سالانہ دستارِ فضیلت کی تقریب" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Photo Title (English) *</label>
+              <label class="lang-ur" style="font-weight: 600;">تصویر کا عنوان (انگریزی) *</label>
+              <input type="text" id="photoTitleEn" placeholder="e.g. Annual Graduation Ceremony" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="lang-en" style="font-weight: 600;">Category Filter *</label>
+            <label class="lang-ur" style="font-weight: 600;">کیٹیگری فلٹر *</label>
+            <select id="photoCategory" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <option value="campus">Campus & Building (عمارت و کیمپس)</option>
+              <option value="academics">Classes & Library (کلاس رومز و لائبریری)</option>
+              <option value="events">Events & Graduation (تقاریب و دستارِ فضیلت)</option>
+              <option value="boarding">Hostel & Dining (اقامت و طعام)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 0.9rem;">
+            <span class="lang-en"><i class="fa-solid fa-paper-plane"></i> Publish Photo to Section & Announce</span>
+            <span class="lang-ur"><i class="fa-solid fa-paper-plane"></i> منتخب سیکشن میں تصویر شائع کریں اور "تازہ ترین خبر" لنک تخلیق کریں</span>
+          </button>
+        </form>
+
+        <hr style="margin: 3rem 0; border: 0; border-top: 2px dashed var(--gold);">
+
+        <!-- Live Photo Management & Deletion Grid -->
+        <h2 class="section-title lang-en" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-trash-can"></i> Manage & Delete Live Photos</h2>
+        <h2 class="section-title lang-ur" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-trash-can"></i> شائع شدہ تصاویر کا انتظام و حذف کریں</h2>
+
+        <div class="gallery-grid" style="margin-top: 1.5rem;">
+          <!-- Dynamically populated with delete buttons via script.js -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center" style="text-align: center;">
+      <p class="lang-en">&copy; 2026 Madrassa Darul Falah Chota Lahor Swabi. All Rights Reserved.</p>
+      <p class="lang-ur">&copy; 2026 جملہ حقوق مدرسہ دارالفلاح چھوٹا لاہور صوابی کے پاس محفوظ ہیں۔</p>
+    </div>
+  </footer>
+
+  <script src="../style/script.js"></script>
+</body>
+</html>

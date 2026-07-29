@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Admin Control Dashboard | Madrassa Darul Falah Swabi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style/style.css">
+
+  <!-- SheetJS Library for Client-side Excel (.xlsx) parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <script>
+    // Guarded Route Security Check: Must be authenticated Admin
+    if (localStorage.getItem('madrassa_admin_auth') !== 'true') {
+      alert('Access Denied: Admin Authentication Required.');
+      window.location.href = 'admin-portal.html';
+    }
+  </script>
+</head>
+<body class="admin-authenticated admin-session-active" style="background: #0f172a; color: #f8fafc;">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar" style="background: #090d16; border-bottom: 1px solid #1e293b;">
+    <div class="container">
+      <div class="top-contact">
+        <a href="tel:+92938400123"><i class="fa-solid fa-phone"></i> +92 938 400123</a>
+        <a href="mailto:info@darulfalahswabi.edu.pk"><i class="fa-solid fa-envelope"></i> info@darulfalahswabi.edu.pk</a>
+      </div>
+      <div class="top-actions">
+        <a href="../index.html" class="top-portal-link" style="background: rgba(255,255,255,0.1); border-color: var(--gold);">
+          <i class="fa-solid fa-house"></i> <span class="lang-en">Public Website</span><span class="lang-ur">اصلی ویب سائٹ</span>
+        </a>
+        <button id="langToggleBtn" class="lang-toggle-btn">
+          <i class="fa-solid fa-globe"></i>
+          <span class="btn-lang-text-en">اردو (RTL)</span>
+          <span class="btn-lang-text-ur" style="display: none;">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Exclusive Header Banner -->
+  <header style="background: #1e293b; border-bottom: 3px solid var(--gold); padding: 1.2rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <img src="../images/logo.png" alt="Madrassa Logo" style="height: 50px;">
+        <div>
+          <h2 style="font-family: var(--font-ur); color: var(--gold); margin: 0; font-size: 1.6rem;">مدرسہ دارالفلاح چھوٹا لاہور صوابی</h2>
+          <span style="font-size: 0.85rem; color: #94a3b8;">MASTER ADMINISTRATIVE CONTROL DASHBOARD</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <div style="background: #065f46; color: #34d399; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 700; border: 1px solid #10b981;">
+          <i class="fa-solid fa-circle-check"></i> <span class="lang-en">Admin Session Active</span><span class="lang-ur">ایڈمن سیشن فعال ہے</span>
+        </div>
+
+        <button onclick="adminLogoutAction()" class="btn btn-primary" style="background: #ef4444; border-color: #dc2626; padding: 0.45rem 1.2rem; font-size: 0.9rem;">
+          <span class="lang-en"><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
+          <span class="lang-ur"><i class="fa-solid fa-right-from-bracket"></i> لاگ آؤٹ</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Section Header -->
+  <section style="padding: 2rem 0; background: #0f172a; border-bottom: 1px solid #334155;">
+    <div class="container text-center" style="text-align: center;">
+      <h1 class="lang-en" style="font-size: 2.5rem; color: var(--gold); font-family: var(--font-en-serif);">Master Administrative Dashboard</h1>
+      <h1 class="lang-ur" style="font-size: 2.3rem; color: var(--gold); font-family: var(--font-ur);">مرکزی ایڈمنسٹریٹیو کنٹرول ڈیش بورڈ</h1>
+      <p class="lang-en" style="color: #94a3b8; max-width: 750px; margin: 0.5rem auto 0 auto;">Manage Photo Gallery Uploads, Exam Results Publishing, Excel Imports, and Live Directories natively below.</p>
+      <p class="lang-ur" style="color: #94a3b8; max-width: 750px; margin: 0.5rem auto 0 auto;">ویب سائٹ کے تمام شعبہ جات کی تصاویر، ایکسل رزلٹ اپ لوڈ اور ڈائریکٹریز کا براہِ راست انتظام کریں</p>
+    </div>
+  </section>
+
+  <!-- Main Management Control Suite (No Redirection Required) -->
+  <section class="section-padding" style="background: #0f172a;">
+    <div class="container">
+
+      <!-- =================================================================== -->
+      <!-- 1. PHOTO & SECTION IMAGE MANAGER SECTION -->
+      <!-- =================================================================== -->
+      <div style="background: #1e293b; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--gold); margin-bottom: 3rem;">
+        <h2 class="lang-en" style="color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fa-solid fa-camera-retro" style="font-size: 2rem;"></i> 1. Photo & Website Section Image Manager
+        </h2>
+        <h2 class="lang-ur" style="color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fa-solid fa-camera-retro" style="font-size: 2rem;"></i> ۱۔ تصاویر اپ لوڈ و شعبہ جات مینیجر
+        </h2>
+
+        <form id="adminPhotoUploadForm" onsubmit="submitAdminPhotoUpload(event); return false;">
+          <!-- Drag & Drop Upload Zone -->
+          <div class="dropzone-box" id="imageDropzone" style="background: #0f172a; border-color: var(--gold); color: #cbd5e1; margin-bottom: 1.5rem; cursor: pointer;">
+            <i class="fa-solid fa-cloud-arrow-up dropzone-icon" style="color: var(--gold);"></i>
+            <h4 class="lang-en" style="margin-bottom: 0.3rem; color: #f8fafc;">Drag & Drop Image Here or Click to Browse</h4>
+            <h4 class="lang-ur" style="margin-bottom: 0.3rem; color: #f8fafc;">تصویر یہاں ڈریگ کریں یا کلک کر کے فائل منتخب کریں</h4>
+            <span style="font-size: 0.8rem; color: #94a3b8;">Supports: JPG, PNG, WEBP, GIF (Max 10MB)</span>
+            
+            <div style="margin-top: 0.8rem;">
+              <button type="button" onclick="document.getElementById('photoFileInput').click()" class="btn btn-outline-primary" style="padding: 0.35rem 1rem; font-size: 0.85rem; border-color: var(--gold); color: var(--gold);">
+                <i class="fa-solid fa-folder-open"></i> <span class="lang-en">Browse Image File</span><span class="lang-ur">تصویر منتخب کریں</span>
+              </button>
+            </div>
+
+            <input type="file" id="photoFileInput" accept="image/*" style="display: none;">
+            <img id="imagePreviewImg" style="display: none; max-height: 200px; margin: 1rem auto; border-radius: var(--radius-sm); border: 2px solid var(--gold);">
+          </div>
+
+          <!-- Target Website Section Dropdown -->
+          <div style="margin-bottom: 1.2rem;">
+            <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Target Website Section *</label>
+            <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">تصویر کے لیے ویب سائٹ کا منتخب کردہ شعبہ / سیکشن *</label>
+            <select id="targetSection" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+              <option value="gallery">Campus Photo Gallery (تصویری گیلری)</option>
+              <option value="hero">Hero Main Banner Background (ہیرو مین بینر بیک گراؤنڈ)</option>
+              <option value="hifz">Hifz-ul-Quran Department (تحفیظ القرآن والتجوید)</option>
+              <option value="schooling">Integrated Formal Schooling (عصری اسکولنگ)</option>
+              <option value="dars-e-nizami">Dars-e-Nizami Alim Degree (درسِ نظامی)</option>
+              <option value="darul-ifta">Darul Ifta & Takhassus (دارالافتاء)</option>
+              <option value="facilities">Boarding & Dining Facilities (اقامت و طعام)</option>
+              <option value="cctv">CCTV & Security Monitoring (سیکیورٹی مانیٹرنگ)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Photo Title (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">تصویر کا عنوان (اردو) *</label>
+              <input type="text" id="photoTitleUr" placeholder="مثال: سالانہ دستارِ فضیلت کی تقریب" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Photo Title (English) *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">تصویر کا عنوان (انگریزی) *</label>
+              <input type="text" id="photoTitleEn" placeholder="e.g. Annual Graduation Ceremony" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Category Filter *</label>
+            <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">کیٹیگری فلٹر *</label>
+            <select id="photoCategory" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+              <option value="campus">Campus & Building (عمارت و کیمپس)</option>
+              <option value="academics">Classes & Library (کلاس رومز و لائبریری)</option>
+              <option value="events">Events & Graduation (تقاریب و دستارِ فضیلت)</option>
+              <option value="boarding">Hostel & Dining (اقامت و طعام)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 0.9rem; background: var(--gold); color: #0f172a; border-color: var(--gold); font-weight: 700;">
+            <span class="lang-en"><i class="fa-solid fa-paper-plane"></i> Publish Photo to Section & Announce</span>
+            <span class="lang-ur"><i class="fa-solid fa-paper-plane"></i> منتخب سیکشن میں تصویر شائع کریں اور "تازہ ترین خبر" لنک تخلیق کریں</span>
+          </button>
+        </form>
+
+        <h3 class="lang-en" style="color: var(--gold); margin: 2.5rem 0 1rem 0;"><i class="fa-solid fa-trash-can"></i> Manage & Delete Live Photos</h3>
+        <h3 class="lang-ur" style="color: var(--gold); margin: 2.5rem 0 1rem 0;"><i class="fa-solid fa-trash-can"></i> شائع شدہ تصاویر کا انتظام و حذف کریں</h3>
+
+        <div class="gallery-grid" style="margin-top: 1rem;">
+          <!-- Dynamically populated with delete buttons via script.js -->
+        </div>
+      </div>
+
+      <!-- =================================================================== -->
+      <!-- 2. EXAM RESULTS & EXCEL PUBLISHER SECTION -->
+      <!-- =================================================================== -->
+      <div style="background: #1e293b; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid #10b981; margin-bottom: 3rem;">
+        <h2 class="lang-en" style="color: #34d399; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fa-solid fa-graduation-cap" style="font-size: 2rem;"></i> 2. Exam Results & Excel (.xlsx) Publisher
+        </h2>
+        <h2 class="lang-ur" style="color: #34d399; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+          <i class="fa-solid fa-graduation-cap" style="font-size: 2rem;"></i> ۲۔ امتحانی نتائج و ایکسل اپ لوڈ پورٹل
+        </h2>
+
+        <!-- Option A: Excel (.xlsx) Batch Upload -->
+        <div style="background: #0f172a; padding: 2rem; border-radius: var(--radius-md); border: 2px dashed #10b981; margin-bottom: 2.5rem; text-align: center;">
+          <i class="fa-solid fa-file-excel" style="font-size: 3rem; color: #34d399; margin-bottom: 0.8rem;"></i>
+          <h3 class="lang-en" style="color: #f8fafc;"><i class="fa-solid fa-file-import"></i> Option A: Batch Upload from Excel (.xlsx) File</h3>
+          <h3 class="lang-ur" style="color: #f8fafc;"><i class="fa-solid fa-file-import"></i> طریقہ ۱: ایکسل (.xlsx) فائل کے ذریعے بیک وقت رزلٹ شائع کریں</h3>
+          <p class="lang-en" style="color: #94a3b8; font-size: 0.9rem; margin-top: 0.4rem;">Select your Excel spreadsheet containing student results to import all rows instantly.</p>
+          <p class="lang-ur" style="color: #94a3b8; font-size: 0.9rem; margin-top: 0.4rem;">اپنی ایکسل شیٹ منتخب کریں جس میں تمام طلباء کے نتائج درج ہیں</p>
+
+          <form id="xlsxUploadForm" style="margin-top: 1.2rem;">
+            <div style="margin-bottom: 1rem;">
+              <input type="file" id="xlsxFileInput" accept=".xlsx, .xls, .csv" required style="padding: 0.6rem; background: #1e293b; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm); width: 100%; max-width: 450px;">
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <button type="submit" class="btn btn-primary" style="background: #059669; border-color: #047857; font-weight: 700;">
+                <span class="lang-en"><i class="fa-solid fa-upload"></i> Import & Publish Excel Results</span>
+                <span class="lang-ur"><i class="fa-solid fa-upload"></i> ایکسل نتائج اپ لوڈ کریں</span>
+              </button>
+
+              <button type="button" onclick="downloadSampleXLSX()" class="btn btn-secondary" style="background: #334155; color: #fff; border-color: #475569;">
+                <span class="lang-en"><i class="fa-solid fa-download"></i> Download Sample Excel (.xlsx) Template</span>
+                <span class="lang-ur"><i class="fa-solid fa-download"></i> نمونہ ایکسل (.xlsx) ٹیمپلیٹ ڈاؤن لوڈ کریں</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Option B: Manual Student Entry -->
+        <h3 class="lang-en" style="color: #34d399; margin-bottom: 1.2rem;"><i class="fa-solid fa-keyboard"></i> Option B: Manual Student Result Entry</h3>
+        <h3 class="lang-ur" style="color: #34d399; margin-bottom: 1.2rem;"><i class="fa-solid fa-keyboard"></i> طریقہ ۲: انفرادی طالب علم رزلٹ اینٹری</h3>
+
+        <form id="adminResultForm">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Student Roll No *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">طالب علم کا رول نمبر *</label>
+              <input type="text" id="resRollNo" placeholder="MDF-2026-1003" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Student Name (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">طالب علم کا نام *</label>
+              <input type="text" id="resNameUr" placeholder="مثال: عمر فاروق" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Father's Name (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">والد کا نام *</label>
+              <input type="text" id="resFatherUr" placeholder="مثال: خالد محمود" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Department *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">شعبہ *</label>
+              <select id="resDept" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+                <option value="تحفیظ القرآن والتجوید (Hifz-ul-Quran)">Hifz-ul-Quran & Tajweed (تحفیظ القرآن والتجوید)</option>
+                <option value="عصری پرائمری و مڈل اسکولنگ (Schooling)">Integrated Schooling (عصری اسکولنگ)</option>
+                <option value="درسِ نظامی عالمیہ (Dars-e-Nizami Alim Degree)">Dars-e-Nizami Alim Degree (درسِ نظامی عالمیہ)</option>
+                <option value="دارالافتاء و تخصص فی الفقہ (Darul Ifta)">Darul Ifta & Takhassus (دارالافتاء)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Examination Term *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">امتحانی سال / سیشن *</label>
+              <input type="text" id="resTerm" value="Annual Examination 2026 / سالانہ امتحان ۲۰۲۶" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Obtained / Total Marks *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">حاصل کردہ / کل نمبر *</label>
+              <input type="text" id="resMarks" placeholder="950 / 1000" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Grade *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">گریڈ *</label>
+              <select id="resGradeUr" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+                <option value="ممتاز (Excellent)">ممتاز (Excellent)</option>
+                <option value="جید جداً (Very Good)">جید جداً (Very Good)</option>
+                <option value="جید (Good)">جید (Good)</option>
+                <option value="مقبول (Pass)">مقبول (Pass)</option>
+              </select>
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600; color: #cbd5e1;">Result Status *</label>
+              <label class="lang-ur" style="font-weight: 600; color: #cbd5e1;">نتیجہ *</label>
+              <select id="resStatusUr" required style="width: 100%; padding: 0.85rem; background: #0f172a; color: #fff; border: 1px solid #334155; border-radius: var(--radius-sm);">
+                <option value="کامیاب (Passed)">کامیاب (Passed)</option>
+                <option value="فارغ التحصیل حفاظ (Graduate Hafiz)">فارغ التحصیل حفاظ (Graduate Hafiz)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 0.9rem; background: #059669; border-color: #047857; font-weight: 700;">
+            <span class="lang-en"><i class="fa-solid fa-upload"></i> Upload Single Result & Announce</span>
+            <span class="lang-ur"><i class="fa-solid fa-upload"></i> انفرادی رزلٹ شائع کریں اور "تازہ ترین خبر" میں اعلان کریں</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- =================================================================== -->
+      <!-- 3. DIRECTORY DATA TABLES -->
+      <!-- =================================================================== -->
+      <div style="background: #1e293b; padding: 2rem; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: 1px solid #334155; margin-bottom: 2.5rem;">
+        <h3 class="lang-en" style="color: var(--gold); margin-bottom: 1rem;"><i class="fa-solid fa-users"></i> 3. Registered Student Profiles (Pre-Admissions)</h3>
+        <h3 class="lang-ur" style="color: var(--gold); margin-bottom: 1rem;"><i class="fa-solid fa-users"></i> ۳۔ رجسٹرڈ طالب علم پروفائل ڈائریکٹری</h3>
+        
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: #f8fafc;" class="marksheet-table">
+            <thead>
+              <tr style="background: #0f172a; color: var(--gold);">
+                <th style="padding: 0.8rem; border: 1px solid #334155;">Roll No</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">طالب علم کا نام (Student Name)</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">والد کا نام (Father Name)</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">شعبہ (Department)</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">رابطہ نمبر (Phone)</th>
+              </tr>
+            </thead>
+            <tbody id="adminStudentsTableBody">
+              <!-- Dynamically populated via script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="background: #1e293b; padding: 2rem; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: 1px solid #334155;">
+        <h3 class="lang-en" style="color: var(--gold); margin-bottom: 1rem;"><i class="fa-solid fa-square-poll-vertical"></i> 4. Published Exam Results Directory</h3>
+        <h3 class="lang-ur" style="color: var(--gold); margin-bottom: 1rem;"><i class="fa-solid fa-square-poll-vertical"></i> ۴۔ شائع شدہ امتحانی نتائج کی لائیو لسٹ</h3>
+        
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: #f8fafc;" class="marksheet-table">
+            <thead>
+              <tr style="background: #0f172a; color: var(--gold);">
+                <th style="padding: 0.8rem; border: 1px solid #334155;">Roll No</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">طالب علم (Student)</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">شعبہ (Department)</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">نمبر (Marks)</th>
+                <th style="padding: 0.8rem; border: 1px solid #334155;">گریڈ (Grade)</th>
+              </tr>
+            </thead>
+            <tbody id="adminResultsTableBody">
+              <!-- Dynamically populated via script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Admin Footer -->
+  <footer style="background: #090d16; color: #64748b; padding: 1.5rem 0; text-align: center; border-top: 1px solid #1e293b;">
+    <div class="container text-center">
+      <p class="lang-en">&copy; 2026 Madrassa Darul Falah Chota Lahor Swabi. Master Admin Control Panel.</p>
+      <p class="lang-ur">&copy; 2026 مدرسہ دارالفلاح چھوٹا لاہور صوابی۔ مرکزی ایڈمن پورٹل۔</p>
+    </div>
+  </footer>
+
+  <script src="../style/script.js"></script>
+  <script>
+    function adminLogoutAction() {
+      localStorage.removeItem('madrassa_admin_auth');
+      alert('آپ لاگ آؤٹ ہو چکے ہیں۔ / You have logged out.');
+      window.location.href = 'admin-portal.html';
+    }
+  </script>
+</body>
+</html>

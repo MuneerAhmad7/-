@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Exam Results Upload Portal | Madrassa Darul Falah Swabi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style/style.css">
+
+  <!-- SheetJS Library for Client-side Excel (.xlsx) parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contact">
+        <a href="tel:+92938400123"><i class="fa-solid fa-phone"></i> +92 938 400123</a>
+        <a href="mailto:info@darulfalahswabi.edu.pk"><i class="fa-solid fa-envelope"></i> info@darulfalahswabi.edu.pk</a>
+      </div>
+      <div class="top-actions">
+        <a href="admin-portal.html" class="top-portal-link">
+          <i class="fa-solid fa-lock"></i> <span class="lang-en">Admin Hub</span><span class="lang-ur">ایڈمن پورٹل</span>
+        </a>
+        <button id="langToggleBtn" class="lang-toggle-btn">
+          <i class="fa-solid fa-globe"></i>
+          <span class="btn-lang-text-en">اردو (RTL)</span>
+          <span class="btn-lang-text-ur" style="display: none;">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main Navigation -->
+  <header class="header-main">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo-link">
+        <img src="../images/logo.png" alt="Madrassa Crest Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <span class="brand-name lang-en">Madrassa Darul Falah</span>
+          <span class="brand-name lang-ur">مدرسہ دارالفلاح چھوٹا لاہور صوابی</span>
+          <span class="brand-subtitle lang-en">Chota Lahor, District Swabi KPK</span>
+          <span class="brand-subtitle lang-ur">ضلع صوابی، خیبر پختونخوا</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li class="nav-item"><a href="../index.html" class="nav-link"><span class="lang-en">Home</span><span class="lang-ur">صفحہ اول</span></a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><span class="lang-en">About Us</span><span class="lang-ur">تعارف</span></a></li>
+          <li class="nav-item"><a href="academics.html" class="nav-link"><span class="lang-en">Academics</span><span class="lang-ur">تعلیمی شعبہ جات</span></a></li>
+          <li class="nav-item"><a href="facilities.html" class="nav-link"><span class="lang-en">Facilities</span><span class="lang-ur">سہولیات و رہائش</span></a></li>
+          <li class="nav-item"><a href="reviews.html" class="nav-link"><span class="lang-en">Reviews</span><span class="lang-ur">آراء و تاثرات</span></a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="lang-en">Gallery</span><span class="lang-ur">تصاویری جھلکیاں</span></a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><span class="lang-en">Contact</span><span class="lang-ur">رابطہ کریں</span></a></li>
+          <li class="nav-item"><a href="admissions.html" class="btn-cta-nav"><span class="lang-en">Admissions</span><span class="lang-ur">آن لائن داخلہ</span></a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Section Header -->
+  <section class="section-padding bg-dark" style="border-bottom: 3px solid var(--gold);">
+    <div class="container text-center" style="text-align: center;">
+      <h1 class="lang-en" style="font-size: 2.8rem; color: var(--gold); font-family: var(--font-en-serif);">Admin Exam Results Upload Portal</h1>
+      <h1 class="lang-ur" style="font-size: 2.5rem; color: var(--gold); font-family: var(--font-ur);">ایڈمن امتحانی نتائج اپ لوڈ پورٹل</h1>
+      <p class="lang-en" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">Upload student results manually or batch import directly from Excel (.xlsx) files.</p>
+      <p class="lang-ur" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">انفرادی رزلٹ درج کریں یا ایکسل (.xlsx) فائل کے ذریعے بیک وقت تمام نتائج اپ لوڈ کریں</p>
+    </div>
+  </section>
+
+  <!-- Main Upload Section -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Case A: Locked Authentication Card -->
+      <div id="adminLockCardSection" class="admin-login-card">
+        <div style="font-size: 3.5rem; color: var(--gold); margin-bottom: 1rem;"><i class="fa-solid fa-user-shield"></i></div>
+        <h2 class="section-title lang-en">Admin Authentication Required</h2>
+        <h2 class="section-title lang-ur">ایڈمن لاگ ان درکار ہے</h2>
+        <p class="lang-en" style="color: var(--text-muted); margin-bottom: 1.5rem;">Please enter administrator credentials to upload exam results.</p>
+        <p class="lang-ur" style="color: var(--text-muted); margin-bottom: 1.5rem;">امتحانی نتائج شائع کرنے کے لیے اپنے ایڈمن اکاؤنٹ سے لاگ ان کریں</p>
+
+        <form id="adminPageLoginForm" onsubmit="handleAdminLoginDirect(event, this); return false;">
+          <div style="margin-bottom: 1rem; text-align: left;">
+            <label class="lang-en" style="font-weight: 600; font-size: 0.9rem;">Username</label>
+            <label class="lang-ur" style="font-weight: 600; font-size: 0.9rem; text-align: right; display: block;">یوزر نیم</label>
+            <input type="text" class="admin-user-input" placeholder="admin" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+          </div>
+
+          <div style="margin-bottom: 1.5rem; text-align: left;">
+            <label class="lang-en" style="font-weight: 600; font-size: 0.9rem;">Password</label>
+            <label class="lang-ur" style="font-weight: 600; font-size: 0.9rem; text-align: right; display: block;">پاس ورڈ</label>
+            <input type="password" class="admin-pass-input" placeholder="••••••••" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span class="lang-en"><i class="fa-solid fa-right-to-bracket"></i> Login as Admin</span>
+            <span class="lang-ur"><i class="fa-solid fa-right-to-bracket"></i> ایڈمن لاگ ان کریں</span>
+          </button>
+        </form>
+
+        <div id="adminLoginErrorDisplay"></div>
+      </div>
+
+      <!-- Case B: Authenticated Admin Upload Options -->
+      <div id="adminUploadCardSection" class="admin-upload-card" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
+          <div class="admin-badge-status">
+            <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+            <span class="lang-en">Logged in as Administrator</span>
+            <span class="lang-ur">لاگ ان: ایڈمنسٹریٹر</span>
+          </div>
+
+          <div>
+            <a href="admin-portal.html" class="btn btn-outline-primary" style="padding: 0.35rem 0.8rem; font-size: 0.85rem; margin-right: 0.5rem;">
+              <span class="lang-en">Admin Hub</span><span class="lang-ur">مرکزی ڈیش بورڈ</span>
+            </a>
+            <button class="btn btn-outline-primary adminLogoutBtn" style="padding: 0.35rem 0.8rem; font-size: 0.85rem; border-color: #ef4444; color: #ef4444;">
+              <span class="lang-en"><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
+              <span class="lang-ur"><i class="fa-solid fa-right-from-bracket"></i> لاگ آؤٹ</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 1. EXCEL (.XLSX) BATCH UPLOAD SECTION -->
+        <div style="background: var(--gold-light); padding: 2rem; border-radius: var(--radius-md); border: 2px dashed var(--gold); margin-bottom: 2.5rem; text-align: center;">
+          <i class="fa-solid fa-file-excel" style="font-size: 3rem; color: #047857; margin-bottom: 0.8rem;"></i>
+          <h3 class="lang-en" style="color: var(--primary);"><i class="fa-solid fa-file-import"></i> Option A: Batch Upload from Excel (.xlsx) File</h3>
+          <h3 class="lang-ur" style="color: var(--primary);"><i class="fa-solid fa-file-import"></i> طریقہ ۱: ایکسل (.xlsx) فائل کے ذریعے بیک وقت رزلٹ شائع کریں</h3>
+          <p class="lang-en" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.4rem;">Select your Excel spreadsheet containing student results to import all rows instantly.</p>
+          <p class="lang-ur" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.4rem;">اپنی ایکسل شیٹ منتخب کریں جس میں تمام طلباء کے نتائج درج ہیں</p>
+
+          <form id="xlsxUploadForm" style="margin-top: 1.2rem;">
+            <div style="margin-bottom: 1rem;">
+              <input type="file" id="xlsxFileInput" accept=".xlsx, .xls, .csv" required style="padding: 0.6rem; background: var(--bg-surface); border: 1px solid var(--border-gold); border-radius: var(--radius-sm); width: 100%; max-width: 450px;">
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <button type="submit" class="btn btn-primary">
+                <span class="lang-en"><i class="fa-solid fa-upload"></i> Import & Publish Excel Results</span>
+                <span class="lang-ur"><i class="fa-solid fa-upload"></i> ایکسل نتائج اپ لوڈ کریں</span>
+              </button>
+
+              <button type="button" onclick="downloadSampleXLSX()" class="btn btn-secondary">
+                <span class="lang-en"><i class="fa-solid fa-download"></i> Download Sample Excel (.xlsx) Template</span>
+                <span class="lang-ur"><i class="fa-solid fa-download"></i> نمونہ ایکسل (.xlsx) ٹیمپلیٹ ڈاؤن لوڈ کریں</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 2px dashed var(--gold);">
+
+        <!-- 2. MANUAL SINGLE RESULT ENTRY SECTION -->
+        <h3 class="section-title lang-en" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-keyboard"></i> Option B: Manual Student Result Entry</h3>
+        <h3 class="section-title lang-ur" style="text-align: center; margin-bottom: 1.5rem;"><i class="fa-solid fa-keyboard"></i> طریقہ ۲: انفرادی طالب علم رزلٹ اینٹری</h3>
+
+        <form id="adminResultForm">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Student Roll No *</label>
+              <label class="lang-ur" style="font-weight: 600;">طالب علم کا رول نمبر *</label>
+              <input type="text" id="resRollNo" placeholder="MDF-2026-1003" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Student Name (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600;">طالب علم کا نام *</label>
+              <input type="text" id="resNameUr" placeholder="مثال: عمر فاروق" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Father's Name (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600;">والد کا نام *</label>
+              <input type="text" id="resFatherUr" placeholder="مثال: خالد محمود" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Department *</label>
+              <label class="lang-ur" style="font-weight: 600;">شعبہ *</label>
+              <select id="resDept" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                <option value="تحفیظ القرآن والتجوید (Hifz-ul-Quran)">Hifz-ul-Quran & Tajweed (تحفیظ القرآن والتجوید)</option>
+                <option value="عصری پرائمری و مڈل اسکولنگ (Schooling)">Integrated Schooling (عصری اسکولنگ)</option>
+                <option value="درسِ نظامی عالمیہ (Dars-e-Nizami Alim Degree)">Dars-e-Nizami Alim Degree (درسِ نظامی عالمیہ)</option>
+                <option value="دارالافتاء و تخصص فی الفقہ (Darul Ifta)">Darul Ifta & Takhassus (دارالافتاء)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Examination Term *</label>
+              <label class="lang-ur" style="font-weight: 600;">امتحانی سال / سیشن *</label>
+              <input type="text" id="resTerm" value="Annual Examination 2026 / سالانہ امتحان ۲۰۲۶" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Obtained / Total Marks *</label>
+              <label class="lang-ur" style="font-weight: 600;">حاصل کردہ / کل نمبر *</label>
+              <input type="text" id="resMarks" placeholder="950 / 1000" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Grade *</label>
+              <label class="lang-ur" style="font-weight: 600;">گریڈ *</label>
+              <select id="resGradeUr" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                <option value="ممتاز (Excellent)">ممتاز (Excellent)</option>
+                <option value="جید جداً (Very Good)">جید جداً (Very Good)</option>
+                <option value="جید (Good)">جید (Good)</option>
+                <option value="مقبول (Pass)">مقبول (Pass)</option>
+              </select>
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Result Status *</label>
+              <label class="lang-ur" style="font-weight: 600;">نتیجہ *</label>
+              <select id="resStatusUr" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                <option value="کامیاب (Passed)">کامیاب (Passed)</option>
+                <option value="فارغ التحصیل حفاظ (Graduate Hafiz)">فارغ التحصیل حفاظ (Graduate Hafiz)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 0.9rem;">
+            <span class="lang-en"><i class="fa-solid fa-upload"></i> Upload Single Result & Announce</span>
+            <span class="lang-ur"><i class="fa-solid fa-upload"></i> انفرادی رزلٹ شائع کریں اور "تازہ ترین خبر" میں اعلان کریں</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center" style="text-align: center;">
+      <p class="lang-en">&copy; 2026 Madrassa Darul Falah Chota Lahor Swabi. All Rights Reserved.</p>
+      <p class="lang-ur">&copy; 2026 جملہ حقوق مدرسہ دارالفلاح چھوٹا لاہور صوابی کے پاس محفوظ ہیں۔</p>
+    </div>
+  </footer>
+
+  <script src="../style/script.js"></script>
+</body>
+</html>

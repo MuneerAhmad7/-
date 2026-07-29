@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madrassa Darul Falah Chota Lahor Swabi | مرکز علوم اسلامیہ و عصری تعلیم</title>
+  <meta name="description" content="Madrassa Darul Falah Chota Lahor Swabi provides 100% free Hifz-ul-Quran, Dars-e-Nizami, Darul Ifta, and integrated formal schooling with 24/7 CCTV security and free boarding.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement & Language Switcher Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contact">
+        <a href="tel:+92938400123"><i class="fa-solid fa-phone"></i> +92 938 400123</a>
+        <a href="https://wa.me/923001234567" target="_blank"><i class="fa-brands fa-whatsapp"></i> +92 300 1234567</a>
+        <a href="mailto:info@darulfalahswabi.edu.pk"><i class="fa-solid fa-envelope"></i> info@darulfalahswabi.edu.pk</a>
+      </div>
+      <div class="top-actions">
+        <a href="sections/student-portal.html" class="top-portal-link">
+          <i class="fa-solid fa-id-card"></i> <span class="lang-en">Student Portal</span><span class="lang-ur">طالب علم پورٹل</span>
+        </a>
+        <a href="sections/results.html" class="top-portal-link">
+          <i class="fa-solid fa-square-poll-vertical"></i> <span class="lang-en">Results</span><span class="lang-ur">امتحانی نتائج</span>
+        </a>
+        <a href="sections/admin-portal.html" id="adminPortalTopLink" class="top-portal-link">
+          <i class="fa-solid fa-lock"></i> <span class="lang-en">Admin Portal</span><span class="lang-ur">ایڈمن پورٹل</span>
+        </a>
+
+        <button id="langToggleBtn" class="lang-toggle-btn" aria-label="Toggle Language">
+          <i class="fa-solid fa-globe"></i>
+          <span class="btn-lang-text-en">اردو (RTL)</span>
+          <span class="btn-lang-text-ur" style="display: none;">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main Navigation -->
+  <header class="header-main">
+    <div class="container header-container">
+      <!-- Official Emblem Crest Logo -->
+      <a href="index.html" class="brand-logo-link">
+        <img src="images/logo.png" alt="Madrassa Darul Falah Crest Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <span class="brand-name lang-en">Madrassa Darul Falah</span>
+          <span class="brand-name lang-ur">مدرسہ دارالفلاح چھوٹا لاہور صوابی</span>
+          <span class="brand-subtitle lang-en">Chota Lahor, District Swabi KPK</span>
+          <span class="brand-subtitle lang-ur">ضلع صوابی، خیبر پختونخوا</span>
+        </div>
+      </a>
+
+      <!-- Navbar Menu with Hover Dropdowns -->
+      <nav>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">
+              <span class="lang-en">Home</span>
+              <span class="lang-ur">صفحہ اول</span>
+            </a>
+          </li>
+
+          <!-- Mouseover Hover Dropdown: About Us -->
+          <li class="nav-item dropdown">
+            <a href="sections/about.html" class="nav-link">
+              <span class="lang-en">About Us</span>
+              <span class="lang-ur">تعارف</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="sections/about.html#history" class="dropdown-link">
+                  <span class="lang-en">History & Mission</span>
+                  <span class="lang-ur">تاریخ و مقاصد</span>
+                </a>
+              </li>
+              <li>
+                <a href="sections/about.html#mohtamim" class="dropdown-link">
+                  <span class="lang-en">Mohtamim's Message</span>
+                  <span class="lang-ur">پیغامِ مہتمم</span>
+                </a>
+              </li>
+              <li>
+                <a href="sections/about.html#governance" class="dropdown-link">
+                  <span class="lang-en">Board of Governors</span>
+                  <span class="lang-ur">مجلسِ شوریٰ</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Mouseover Hover Dropdown: Academics -->
+          <li class="nav-item dropdown">
+            <a href="sections/academics.html" class="nav-link">
+              <span class="lang-en">Academics</span>
+              <span class="lang-ur">تعلیمی شعبہ جات</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="sections/hifz-quran.html" class="dropdown-link">
+                  <span class="lang-en">Hifz-ul-Quran & Tajweed</span>
+                  <span class="lang-ur">تحفیظ القرآن والتجوید</span>
+                </a>
+              </li>
+              <li>
+                <a href="sections/schooling.html" class="dropdown-link">
+                  <span class="lang-en">Integrated Formal Schooling</span>
+                  <span class="lang-ur">عصری پرائمری و مڈل اسکولنگ</span>
+                </a>
+              </li>
+              <li>
+                <a href="sections/dars-e-nizami.html" class="dropdown-link">
+                  <span class="lang-en">Dars-e-Nizami (Alim Degree)</span>
+                  <span class="lang-ur">درسِ نظامی (عالمیہ ڈگری)</span>
+                </a>
+              </li>
+              <li>
+                <a href="sections/darul-ifta.html" class="dropdown-link">
+                  <span class="lang-en">Darul Ifta & Takhassus</span>
+                  <span class="lang-ur">دارالافتاء و تخصص فی الفقہ</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="sections/facilities.html" class="nav-link"><span class="lang-en">Facilities</span><span class="lang-ur">سہولیات و رہائش</span></a></li>
+          <li class="nav-item"><a href="sections/reviews.html" class="nav-link"><span class="lang-en">Reviews</span><span class="lang-ur">آراء و تاثرات</span></a></li>
+          <li class="nav-item"><a href="sections/gallery.html" class="nav-link"><span class="lang-en">Gallery</span><span class="lang-ur">تصاویری جھلکیاں</span></a></li>
+          <li class="nav-item"><a href="sections/contact.html" class="nav-link"><span class="lang-en">Contact</span><span class="lang-ur">رابطہ کریں</span></a></li>
+          <li class="nav-item"><a href="sections/admissions.html" class="btn-cta-nav"><span class="lang-en"><i class="fa-solid fa-graduation-cap"></i> Admissions</span><span class="lang-ur"><i class="fa-solid fa-graduation-cap"></i> آن لائن داخلہ</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Menu Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- News Ticker Marquee Bar -->
+  <div class="ticker-wrap">
+    <div class="ticker-heading">
+      <i class="fa-solid fa-bullhorn"></i>
+      <span class="lang-en">Announcements:</span>
+      <span class="lang-ur">تازہ ترین خبریں:</span>
+    </div>
+    <div class="ticker-content">
+      <div class="ticker-text">
+        <span class="lang-en"> Adimissions are now OPEN for Session 2026-27 | 100% Free Hostel Lodging & 3-Time Nutritious Meals for all boarders | 24/7 CCTV Camera Monitoring Installed across campus grounds.</span>
+        <span class="lang-ur"> سال تعلیمی 2026-27 کے لیے جدید داخلے جاری ہیں | تمام مقیمی طلباء کے لیے 100% مفت رہائش اور 3 وقت کا معیاری طعام | پورے کیمپس میں 24 گھنٹے سی سی ٹی وی نگرانی کا موثر نظام۔</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay-pattern"></div>
+    <div class="container hero-content">
+      <div class="bismillah-calligraphy">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      
+      <h1 class="hero-title lang-en">Madrassa Darul Falah Chota Lahor Swabi</h1>
+      <h1 class="hero-title lang-ur">مدرسہ دارالفلاح چھوٹا لاہور صوابی</h1>
+
+      <p class="hero-subtitle lang-en">
+        Fostering Divine Quranic Knowledge, Dars-e-Nizami Scholarship & Integrated Formal Schooling under Islamic Values.
+      </p>
+      <p class="hero-subtitle lang-ur">
+        قرآنِ کریم کا تحفظ، علومِ اسلامیہ کا فروغ اور جدید عصری تعلیم کا حسین امتزاج
+      </p>
+
+      <div class="hero-badges">
+        <div class="hero-badge"><i class="fa-solid fa-bed"></i> <span class="lang-en">100% Free Boarding</span><span class="lang-ur">100% مفت قیام و طعام</span></div>
+        <div class="hero-badge"><i class="fa-solid fa-video"></i> <span class="lang-en">24/7 CCTV Surveillance</span><span class="lang-ur">24/7 سی سی ٹی وی کیمرے</span></div>
+        <div class="hero-badge"><i class="fa-solid fa-laptop-code"></i> <span class="lang-en">Integrated Computer & Science</span><span class="lang-ur">جدید کمپیوٹر لیب و سائنس</span></div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="sections/admissions.html" class="btn btn-primary">
+          <span class="lang-en">Apply for Admission</span>
+          <span class="lang-ur">داخلہ کے لیے رجوع کریں</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="sections/facilities.html" class="btn btn-secondary">
+          <span class="lang-en">Explore Facilities</span>
+          <span class="lang-ur">سہولیات ملاحظہ کریں</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counter Section -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <div class="stat-number" data-target="1250">0</div>
+        <div class="stat-label lang-en">Enrolled Boarding Students</div>
+        <div class="stat-label lang-ur">زیر تعلیم مقیمی طلباء</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-quran"></i></div>
+        <div class="stat-number" data-target="3400">0</div>
+        <div class="stat-label lang-en">Haffaz Graduated</div>
+        <div class="stat-label lang-ur">فارغ التحصیل حفاظِ کرام</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <div class="stat-number" data-target="65">0</div>
+        <div class="stat-label lang-en">Certified Teachers & Muftis</div>
+        <div class="stat-label lang-ur">جید اساتذہ و مفتیانِ کرام</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="stat-number" data-target="3750">0</div>
+        <div class="stat-label lang-en">Free Daily Meals Served</div>
+        <div class="stat-label lang-ur">روزانہ مفت طعام کی فراہمی</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Academic Programs Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag lang-en">Academic Excellence</span>
+        <span class="section-tag lang-ur">شعبہ جاتِ تعلیم</span>
+        <h2 class="section-title lang-en">Our Educational Faculties</h2>
+        <h2 class="section-title lang-ur">ہمارے نمایاں تعلیمی شعبے</h2>
+        <p class="section-subtitle lang-en">Providing classical Islamic scholarship combined with modern FBISE/KPK curriculum.</p>
+        <p class="section-subtitle lang-ur">علومِ دینیہ کی شمع کے ساتھ جدید سائنسی علوم کی روشنی</p>
+      </div>
+
+      <div class="programs-grid">
+        <!-- Program 1: Hifz -->
+        <div class="program-card">
+          <div class="program-img-wrapper">
+            <img src="images/programs/hifz.jpg" data-section-img="hifz" alt="Hifz-ul-Quran Program" class="program-img">
+            <span class="program-tag lang-en">Department 1</span>
+            <span class="program-tag lang-ur">شعبہ ۱</span>
+          </div>
+          <div class="program-body">
+            <h3 class="program-title lang-en">Hifz-ul-Quran & Tajweed</h3>
+            <h3 class="program-title lang-ur">تحفیظ القرآن والتجوید</h3>
+            <p class="program-desc lang-en">Complete memorization of Holy Quran with pristine Arabic Tajweed pronunciation under certified Qaris.</p>
+            <p class="program-desc lang-ur">مستند قراء کے زیرِ سایہ تجوید و مخارج کی پابندی کے ساتھ قرآنِ مجید کا مکمل حفظ۔</p>
+            <div class="program-footer">
+              <a href="sections/hifz-quran.html" class="program-link">
+                <span class="lang-en">Learn More</span><span class="lang-ur">مزید تفصیلات</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 2: Schooling -->
+        <div class="program-card">
+          <div class="program-img-wrapper">
+            <img src="images/programs/schooling.jpg" data-section-img="schooling" alt="Integrated Formal Schooling" class="program-img">
+            <span class="program-tag lang-en">Department 2</span>
+            <span class="program-tag lang-ur">شعبہ ۲</span>
+          </div>
+          <div class="program-body">
+            <h3 class="program-title lang-en">Integrated Formal Schooling</h3>
+            <h3 class="program-title lang-ur">عصری پرائمری و مڈل اسکولنگ</h3>
+            <p class="program-desc lang-en">KPK & Federal Board syllabus covering English, Mathematics, Science & Computer Science alongside religious studies.</p>
+            <p class="program-desc lang-ur">حفظ و دسرِ نظامی کے ساتھ ساتھ انگریزی، ریاضی، سائنس اور کمپیوٹر کی اعلیٰ تعلیم۔</p>
+            <div class="program-footer">
+              <a href="sections/schooling.html" class="program-link">
+                <span class="lang-en">Learn More</span><span class="lang-ur">مزید تفصیلات</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 3: Dars-e-Nizami -->
+        <div class="program-card">
+          <div class="program-img-wrapper">
+            <img src="images/programs/dars-e-nizami.jpg" data-section-img="dars-e-nizami" alt="Dars-e-Nizami Alim Degree" class="program-img">
+            <span class="program-tag lang-en">Department 3</span>
+            <span class="program-tag lang-ur">شعبہ ۳</span>
+          </div>
+          <div class="program-body">
+            <h3 class="program-title lang-en">Dars-e-Nizami (Alim Course)</h3>
+            <h3 class="program-title lang-ur">درسِ نظامی (عالمیہ ڈگری)</h3>
+            <p class="program-desc lang-en">Comprehensive 8-year degree course covering Tafseer, Hadith (Sihah Sitta), Fiqh, Arabic Grammar & Rhetoric.</p>
+            <p class="program-desc lang-ur">تفسیر، حدیث (صحاحِ ستہ)، فقہ، منطق اور عربی گرامر پر مشتمل 8 سالہ عالمِ دین کورس۔</p>
+            <div class="program-footer">
+              <a href="sections/dars-e-nizami.html" class="program-link">
+                <span class="lang-en">Learn More</span><span class="lang-ur">مزید تفصیلات</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program 4: Darul Ifta -->
+        <div class="program-card">
+          <div class="program-img-wrapper">
+            <img src="images/programs/darul-ifta.jpg" data-section-img="darul-ifta" alt="Darul Ifta & Takhassus" class="program-img">
+            <span class="program-tag lang-en">Department 4</span>
+            <span class="program-tag lang-ur">شعبہ ۴</span>
+          </div>
+          <div class="program-body">
+            <h3 class="program-title lang-en">Darul Ifta & Jurisprudence</h3>
+            <h3 class="program-title lang-ur">دارالافتاء و تخصص فی الفقہ</h3>
+            <p class="program-desc lang-en">Post-graduate Islamic jurisprudence research center offering Fatwa guidance and specialized Fiqh training.</p>
+            <p class="program-desc lang-ur">شرعی رہنمائی و فتویٰ نویسی کے لیے تخصص فی الفقہ کا اعلیٰ تحقیقی شعبہ۔</p>
+            <div class="program-footer">
+              <a href="sections/darul-ifta.html" class="program-link">
+                <span class="lang-en">Learn More</span><span class="lang-ur">مزید تفصیلات</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Welfare & Security Section -->
+  <section class="section-padding bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag lang-en">Peace of Mind for Parents</span>
+        <span class="section-tag lang-ur">کفالت و تحفظ</span>
+        <h2 class="section-title lang-en">100% Free Boarding & Campus Safety</h2>
+        <h2 class="section-title lang-ur">مفت رہائش، غذائیت بخش طعام اور مکمل تحفظ</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-badge"><i class="fa-solid fa-utensils"></i></div>
+          <h3 class="feature-title lang-en">3-Time Free Nutritious Meals</h3>
+          <h3 class="feature-title lang-ur">تین وقت کا مفت و معیاری کھانا</h3>
+          <p class="feature-desc lang-en">Hygenic, well-balanced fresh meals cooked daily in our modern institutional kitchen for all full-time boarders.</p>
+          <p class="feature-desc lang-ur">تمام مقیمی طلباء کے لیے ادارے کے صاف ستھرے باورچی خانے میں تیار کردہ غذائیت بخش طعام۔</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-badge"><i class="fa-solid fa-hotel"></i></div>
+          <h3 class="feature-title lang-en">Free Hostel Lodging (*Qiyam*)</h3>
+          <h3 class="feature-title lang-ur">مفت و آرام دہ ہاسٹل کی سہولت</h3>
+          <p class="feature-desc lang-en">Clean, ventilated dormitory halls equipped with comfortable beds, laundry facilities, and medical support.</p>
+          <p class="feature-desc lang-ur">طہارت و صفائی سے مزین کشادہ کمرے، بسترے اور طبی دیکھ بھال کا مکمل بندوبست۔</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-badge"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="feature-title lang-en">Strict Discipline & Mentorship</h3>
+          <h3 class="feature-title lang-ur">اخلاقی تربیت و سرپرستی</h3>
+          <p class="feature-desc lang-en">24/7 dedicated residential wardens ensuring character building, punctuality in prayers, and moral discipline.</p>
+          <p class="feature-desc lang-ur">اساتذہ کی چوبیس گھنٹے نگرنی میں طلباء کی دینی و اخلاقی تربیت اور نمازوں کی پابندی۔</p>
+        </div>
+      </div>
+
+      <!-- CCTV Security Monitoring Highlight Banner -->
+      <div class="cctv-banner">
+        <div class="cctv-icon-wrap">
+          <i class="fa-solid fa-video"></i>
+        </div>
+        <div class="cctv-content">
+          <h3 class="lang-en">24/7 CCTV Camera Monitoring System</h3>
+          <h3 class="lang-ur">24 گھنٹے سی سی ٹی وی کیمروں کی نگرانی</h3>
+          <p class="lang-en">To ensure maximum safety, campus grounds, dormitories, computer labs, and entry gates are actively monitored around the clock by high-definition security cameras.</p>
+          <p class="lang-ur">طلباء کے مکمل تحفظ کی خاطر مدرسہ دارالفلاح کے تمام کلاس رومز، ہاسٹل، کمپیوٹر لیب اور داخلی راستوں کی 24 گھنٹے سی سی ٹی وی کیمروں سے نگرانی کی جاتی ہے۔</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scholar & Parent Reviews Teaser -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag lang-en">Community Trust</span>
+        <span class="section-tag lang-ur">اعتماد و تاثرات</span>
+        <h2 class="section-title lang-en">What Scholars & Parents Say</h2>
+        <h2 class="section-title lang-ur">علماء، شیوخ اور والدین کی آراء</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="review-quote lang-en">"Madrassa Darul Falah Chota Lahor is a beacon of authentic Islamic guidance in KPK. Their integration of Dars-e-Nizami with science and English is exemplary."</p>
+          <p class="review-quote lang-ur">"مدرسہ دارالفلاح چھوٹا لاہور صوابی میں دینی و عصری علوم کا امتزاج دیکھ کر دل بے حد خوش ہوتا ہے۔ یہ ادارہ خیبر پختونخوا کا ایک عظیم علمی و روحانی مرکز ہے۔"</p>
+          <div class="review-author-info">
+            <div class="review-avatar">M</div>
+            <div>
+              <div class="review-author-name lang-en">Maulana Mufti Muhammad Saeed</div>
+              <div class="review-author-name lang-ur">مولانا مفتی محمد سعید صاحب</div>
+              <div class="review-author-role lang-en">Senior Islamic Jurist</div>
+              <div class="review-author-role lang-ur">سینئر فقہی و استادِ حدیث</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="review-quote lang-en">"For decades, Madrassa Darul Falah has provided 100% free quality education, boarding, and meals to hundreds of local children and orphans."</p>
+          <p class="review-quote lang-ur">"چھوٹا لاہور کے لوگوں کے لیے یہ ادارہ ایک نعمت ہے۔ یتیم اور مستحق بچوں کے لیے مفت تعلیم و طعام کی فراہمی میں اس کی خدمات بے مثال ہیں۔"</p>
+          <div class="review-author-info">
+            <div class="review-avatar">H</div>
+            <div>
+              <div class="review-author-name lang-en">Haji Gul Zada Khan</div>
+              <div class="review-author-name lang-ur">حاجی گل زادہ خان</div>
+              <div class="review-author-role lang-en">Chief Elder, Chota Lahor</div>
+              <div class="review-author-role lang-ur">مشرقِ علاقہ و چئیرمین ویلج کونسل</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="review-quote lang-en">"My son completed Hifz in just 2 years with flawless Tajweed, while simultaneously securing top marks in his 8th Grade FBISE board exams!"</p>
+          <p class="review-quote lang-ur">"میرے بیٹے نے محض 2 سال میں تجوید کے ساتھ حفظ مکمل کیا اور ساتھ ہی اسکولنگ میں بھی نمایاں نمبر حاصل کیے۔ میں انتظامیہ کا تہہ دل سے ممنون ہوں۔"</p>
+          <div class="review-author-info">
+            <div class="review-avatar">T</div>
+            <div>
+              <div class="review-author-name lang-en">Muhammad Tariq Swati</div>
+              <div class="review-author-name lang-ur">محمد طارق سواتی</div>
+              <div class="review-author-role lang-en">Father of Hafiz Muhammad Bilal</div>
+              <div class="review-author-role lang-ur">والد طالب علم</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="sections/reviews.html" class="btn btn-outline-primary">
+          <span class="lang-en">View All 50+ Testimonials</span>
+          <span class="lang-ur">تمام ۵۰+ تاثرات کی فہرست دیکھیں</span>
+          <i class="fa-solid fa-comments"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Map Section -->
+  <section class="section-padding bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag lang-en">Visit Our Campus</span>
+        <span class="section-tag lang-ur">مقام و پتہ</span>
+        <h2 class="section-title lang-en">Located in Chota Lahor, Swabi</h2>
+        <h2 class="section-title lang-ur">چھوٹا لاہور، ضلع صوابی میں واقع</h2>
+      </div>
+
+      <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 2px solid var(--gold);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.289!2d72.356857!3d34.0566968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dee7004a108e57%3A0x44c561f0999d5ae6!2z2YXYr9ix2LPZhyDYr9in2LHYp9mE2YHZhNin2K0g2obZiNaz2Kcg2YTYp9mH2YjYsg!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 class="lang-en">Darul Falah Swabi</h4>
+          <h4 class="lang-ur">مدرسہ دارالفلاح صوابی</h4>
+          <p class="lang-en" style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 1rem;">
+            A non-profit Islamic educational institute providing free Hifz, Dars-e-Nizami, Darul Ifta, and integrated formal schooling in Swabi, KPK.
+          </p>
+          <p class="lang-ur" style="font-size: 0.9rem; color: #9ca3af; margin-bottom: 1rem;">
+            ایک غیر منافع بخش تعلیمی ادارہ جو حفظ القرآن، درسِ نظامی اور عصری تعلیم کی مفت سہولت فراہم کرتا ہے۔
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="lang-en">Quick Links</h4>
+          <h4 class="lang-ur">اہم روابط</h4>
+          <ul class="footer-links">
+            <li><a href="sections/about.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">About Us</span><span class="lang-ur">تعارفِ جامعہ</span></a></li>
+            <li><a href="sections/hifz-quran.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Hifz-ul-Quran</span><span class="lang-ur">شعبہ حفظ</span></a></li>
+            <li><a href="sections/schooling.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Integrated Schooling</span><span class="lang-ur">عصری تعلیم</span></a></li>
+            <li><a href="sections/dars-e-nizami.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Dars-e-Nizami</span><span class="lang-ur">درسِ نظامی</span></a></li>
+            <li><a href="sections/facilities.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Free Hostel & CCTV</span><span class="lang-ur">ہاسٹل و سی سی ٹی وی</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="lang-en">Admissions & Reviews</h4>
+          <h4 class="lang-ur">داخلہ و آراء</h4>
+          <ul class="footer-links">
+            <li><a href="sections/admissions.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Online Registration</span><span class="lang-ur">آن لائن رجسٹریشن</span></a></li>
+            <li><a href="sections/reviews.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Scholar Reviews</span><span class="lang-ur">علماء کے تاثرات</span></a></li>
+            <li><a href="sections/gallery.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Campus Gallery</span><span class="lang-ur">تصاویری البم</span></a></li>
+            <li><a href="sections/contact.html"><i class="fa-solid fa-angle-right"></i> <span class="lang-en">Contact & Location</span><span class="lang-ur">رابطہ و نقشہ</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="lang-en">Contact Info</h4>
+          <h4 class="lang-ur">معلوماتِ رابطہ</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <span class="lang-en">Main Road, Chota Lahor, Swabi, Khyber Pakhtunkhwa, Pakistan</span>
+              <span class="lang-ur">مین روڈ، چھوٹا لاہور، ضلع صوابی، خیبر پختونخوا</span>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>+92 938 400123 / +92 300 1234567</div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>info@darulfalahswabi.edu.pk</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="lang-en">&copy; 2026 Madrassa Darul Falah Chota Lahor Swabi. All Rights Reserved.</p>
+        <p class="lang-ur">&copy; 2026 جملہ حقوق مدرسہ دارالفلاح چھوٹا لاہور صوابی کے پاس محفوظ ہیں۔</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="style/script.js"></script>
+</body>
+</html>

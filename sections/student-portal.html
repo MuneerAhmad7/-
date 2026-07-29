@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Admission Profile Portal | Madrassa Darul Falah Swabi</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contact">
+        <a href="tel:+92938400123"><i class="fa-solid fa-phone"></i> +92 938 400123</a>
+        <a href="mailto:info@darulfalahswabi.edu.pk"><i class="fa-solid fa-envelope"></i> info@darulfalahswabi.edu.pk</a>
+      </div>
+      <div class="top-actions">
+        <a href="student-portal.html" class="top-portal-link">
+          <i class="fa-solid fa-id-card"></i> <span class="lang-en">Student Portal</span><span class="lang-ur">طالب علم پورٹل</span>
+        </a>
+        <a href="results.html" class="top-portal-link">
+          <i class="fa-solid fa-square-poll-vertical"></i> <span class="lang-en">Results</span><span class="lang-ur">امتحانی نتائج</span>
+        </a>
+        <a href="admin-portal.html" class="top-portal-link">
+          <i class="fa-solid fa-lock"></i> <span class="lang-en">Admin Portal</span><span class="lang-ur">ایڈمن پورٹل</span>
+        </a>
+
+        <button id="langToggleBtn" class="lang-toggle-btn">
+          <i class="fa-solid fa-globe"></i>
+          <span class="btn-lang-text-en">اردو (RTL)</span>
+          <span class="btn-lang-text-ur" style="display: none;">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main Navigation -->
+  <header class="header-main">
+    <div class="container header-container">
+      <a href="../index.html" class="brand-logo-link">
+        <img src="../images/logo.png" alt="Madrassa Crest Logo" class="brand-logo-img">
+        <div class="brand-titles">
+          <span class="brand-name lang-en">Madrassa Darul Falah</span>
+          <span class="brand-name lang-ur">مدرسہ دارالفلاح چھوٹا لاہور صوابی</span>
+          <span class="brand-subtitle lang-en">Chota Lahor, District Swabi KPK</span>
+          <span class="brand-subtitle lang-ur">ضلع صوابی، خیبر پختونخوا</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li class="nav-item"><a href="../index.html" class="nav-link"><span class="lang-en">Home</span><span class="lang-ur">صفحہ اول</span></a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"><span class="lang-en">About Us</span><span class="lang-ur">تعارف</span></a></li>
+          <li class="nav-item"><a href="academics.html" class="nav-link"><span class="lang-en">Academics</span><span class="lang-ur">تعلیمی شعبہ جات</span></a></li>
+          <li class="nav-item"><a href="facilities.html" class="nav-link"><span class="lang-en">Facilities</span><span class="lang-ur">سہولیات و رہائش</span></a></li>
+          <li class="nav-item"><a href="reviews.html" class="nav-link"><span class="lang-en">Reviews</span><span class="lang-ur">آراء و تاثرات</span></a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link"><span class="lang-en">Gallery</span><span class="lang-ur">تصاویری جھلکیاں</span></a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><span class="lang-en">Contact</span><span class="lang-ur">رابطہ کریں</span></a></li>
+          <li class="nav-item"><a href="admissions.html" class="btn-cta-nav"><span class="lang-en">Admissions</span><span class="lang-ur">آن لائن داخلہ</span></a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Section Header -->
+  <section class="section-padding bg-dark" style="border-bottom: 3px solid var(--gold);">
+    <div class="container text-center" style="text-align: center;">
+      <h1 class="lang-en" style="font-size: 2.8rem; color: var(--gold); font-family: var(--font-en-serif);">Student Profile & Pre-Admission Registration</h1>
+      <h1 class="lang-ur" style="font-size: 2.5rem; color: var(--gold); font-family: var(--font-ur);">طالب علم پورٹل و رجسٹریشن فارم</h1>
+      <p class="lang-en" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">Create your official student profile before admissions to obtain your Roll Number & Registration Card.</p>
+      <p class="lang-ur" style="color: #d1d5db; max-width: 750px; margin: 0.8rem auto 0 auto;">داخلہ سے قبل اپنا طالب علم پروفائل بنائیں اور اپنا مخصوص رول نمبر حاصل کریں</p>
+    </div>
+  </section>
+
+  <!-- Profile Registration Form Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; background: var(--bg-surface); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border-top: 5px solid var(--primary); border: 1px solid var(--border-gold);">
+        <h2 class="section-title lang-en" style="text-align: center;"><i class="fa-solid fa-id-card"></i> Create Student Profile</h2>
+        <h2 class="section-title lang-ur" style="text-align: center;"><i class="fa-solid fa-id-card"></i> نیا طالب علم پروفائل بنائیں</h2>
+
+        <form id="studentProfileForm" style="margin-top: 1.5rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Student Name (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600;">طالب علم کا نام (اردو) *</label>
+              <input type="text" id="stdNameUr" placeholder="مثال: محمد حسان" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Student Name (English)</label>
+              <label class="lang-ur" style="font-weight: 600;">طالب علم کا نام (انگریزی)</label>
+              <input type="text" id="stdNameEn" placeholder="e.g. Muhammad Hassan" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Father's Name (Urdu) *</label>
+              <label class="lang-ur" style="font-weight: 600;">والد کا نام (اردو) *</label>
+              <input type="text" id="stdFatherUr" placeholder="مثال: عبد الرشید" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Father's Name (English)</label>
+              <label class="lang-ur" style="font-weight: 600;">والد کا نام (انگریزی)</label>
+              <input type="text" id="stdFatherEn" placeholder="e.g. Abdul Rasheed" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+            <div>
+              <label class="lang-en" style="font-weight: 600;">B-Form / CNIC No *</label>
+              <label class="lang-ur" style="font-weight: 600;">بے فارم یا شناختی کارڈ *</label>
+              <input type="text" id="stdCnic" placeholder="16101-XXXXXXX-X" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+            <div>
+              <label class="lang-en" style="font-weight: 600;">Phone / WhatsApp *</label>
+              <label class="lang-ur" style="font-weight: 600;">موبائل یا واٹس ایپ نمبر *</label>
+              <input type="tel" id="stdPhone" placeholder="0300-1234567" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="lang-en" style="font-weight: 600;">Desired Department / Program *</label>
+            <label class="lang-ur" style="font-weight: 600;">مطلوبہ تعلیمی شعبہ *</label>
+            <select id="stdDept" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <option value="Hifz Quran & Tajweed">Hifz Quran & Tajweed (تحفیظ القرآن والتجوید)</option>
+              <option value="Integrated Schooling">Integrated Formal Schooling (عصری پرائمری و مڈل اسکولنگ)</option>
+              <option value="Dars-e-Nizami Alim Course">Dars-e-Nizami Alim Degree (درسِ نظامی عالمیہ)</option>
+              <option value="Darul Ifta & Takhassus">Darul Ifta & Takhassus (دارالافتاء و تخصص)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 0.9rem;">
+            <span class="lang-en"><i class="fa-solid fa-user-plus"></i> Generate Roll Number & Student Profile</span>
+            <span class="lang-ur"><i class="fa-solid fa-user-plus"></i> پروفائل رجسٹر کریں اور رول نمبر حاصل کریں</span>
+          </button>
+        </form>
+
+        <!-- Display Area for Generated Registration ID Card -->
+        <div id="studentProfileCard"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center" style="text-align: center;">
+      <p class="lang-en">&copy; 2026 Madrassa Darul Falah Chota Lahor Swabi. All Rights Reserved.</p>
+      <p class="lang-ur">&copy; 2026 جملہ حقوق مدرسہ دارالفلاح چھوٹا لاہور صوابی کے پاس محفوظ ہیں۔</p>
+    </div>
+  </footer>
+
+  <script src="../style/script.js"></script>
+</body>
+</html>
